@@ -36,11 +36,6 @@ public class StockExchange {
 
     /**
      * addOrder function:
-     * Parameters:
-     *   orderType: The order type, "Buy" or "Sell"
-     *   tickerSymbol: The stock ticker symbol
-     *   quantity: The order quantity
-     *   price: The order price
      *
      * Creates an order with the given parameters and adds it to the corresponding stock's order book
      * (using a lock-free sorted linked list).
@@ -55,8 +50,8 @@ public class StockExchange {
         } else {
             book.sellOrders.add(newOrder);
         }
-        System.out.println("Added " + orderType + " order: " + tickerSymbol +
-                " Qty:" + quantity + " Price:" + price);
+//        System.out.println("Added " + orderType + " order: " + tickerSymbol +
+//                " Qty:" + quantity + " Price:" + price);
     }
 
     /**
@@ -78,8 +73,8 @@ public class StockExchange {
         }
 
         if (bestBuy.price >= bestSell.price) {
-            System.out.println("Matched for ticker " + tickerSymbol +
-                    ": Buy at " + bestBuy.price + " vs Sell at " + bestSell.price);
+//            System.out.println("Matched for ticker " + tickerSymbol +
+//                    ": Buy at " + bestBuy.price + " vs Sell at " + bestSell.price);
             book.buyOrders.remove(bestBuy);
             book.sellOrders.remove(bestSell);
         }
